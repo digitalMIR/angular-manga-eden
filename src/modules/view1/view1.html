@@ -1,0 +1,57 @@
+<article ng-controller="MangaController">
+  <div class="row">
+  	<section class="lista-manga col-xs-4 col-sm-4 col-md-4" >
+    	<h2>elenco manga</h2>
+    	<p>
+			<span>Elementi da {{titoli.start}} a {{((titoli.end <= titoli.total) ? titoli.end : titoli.total)}} di {{titoli.total}} totali</span><br/>
+			<select class="col-xs-12 col-sm-12 col-md-12 form-control" name="selectedId" id="selectedId" ng-model="selectedId">
+				<option ng-repeat="option in titoli.availableOptions" value="{{option.i}}">{{option.t}}</option>
+			</select>
+			<br/>
+			<br/>
+			<button ng-click="page = page - 1" ng-disabled="(page === 0)" class="btn btn-primary"> pagina - </button>
+			<span> pagina {{page}} di {{Math.ceil(titoli.total/500)-1}}
+			<button ng-click="page = page + 1" ng-disabled="(titoli.end >= titoli.total)" class="btn btn-primary"> pagina + </button>
+    	</p>
+  	</section>
+  	<section class="col-xs-4 col-sm-4 col-md-4">
+    	<h2>capitoli {{uscite.total}}</h2>
+    	<p>
+    		<br/>
+			<select class="col-xs-12 col-sm-12 col-md-12 form-control" name="chapterId" id="chapterId" ng-model="chapterId">
+				<option ng-repeat="option in uscite.availableOptions" value="{{option[3]}}">{{option[0]}} - {{option[2]}}</option>
+			</select>
+			<br/>
+			<br/>
+    	</p>
+  	</section>
+  	<section class="col-xs-4 col-sm-4 col-md-4">
+    	<h2>pagine {{pagine.total}}</h2>
+    	<p>
+    		<br/>
+			<select class="col-xs-12 col-sm-12 col-md-12 form-control" name="pageId" id="pageId" ng-model="pageId">
+				<option ng-repeat="option in pagine.availableOptions" value="{{option[1]}}">{{option[0]}}</option>
+			</select>
+			<br/>
+			<br/>
+    	</p>
+  	</section>
+  </div>
+  <div class="row">
+  	<section class="col-xs-12 col-sm-12 col-md-12">
+    	<div class="col-xs-4 col-sm-4 col-md-4" style="text-align: justify;">
+    		<img ng-if="img" ng-src="{{img}}" style="max-width: 100%"/><br/>
+    		<br/>
+    		<span ng-if="uscite.anno"><u>anno</u>: <b>{{uscite.anno}}</b></span><br/>
+    		<span ng-if="uscite.autore"><u>autore</u>: <b>{{uscite.autore}}</b></span><br/>
+    		<span ng-if="uscite.descrizione"><u>descrizione</u>: <b>{{uscite.descrizione}}</b></span><br/>
+    		<br/>
+    		<br/>
+    		<br/>
+    	</div>
+    	<div class="col-xs-8 col-sm-8 col-md-8">
+    		<img ng-if="imgPage" ng-src="{{imgPage}}" style="max-width: 100%"/>
+    	</div>
+  	</section>
+  </div>
+</article>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+  
+  <!-- bower:css -->
+  <link rel="stylesheet" href="lib/angular-ui-select/dist/select.css" />
+  <!-- endbower -->
+
+  <!-- include: "type": "css", "files": "css/**/*.css, resources/**/*.css, components/**/*.css, modules/**/*.css" -->
+  <link href="css/app.css" rel="stylesheet" type="text/css">
+  <!-- /include -->
+</head>
+<body>
+  <header>
+    <h1>Manga Eden</h1>
+  </header>
+
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <main role="main">
+    <div ng-view></div>
+  </main>
+
+  <footer>
+    <div>MangaEden app: v<span app-version></span> by Marco Astorino</div>
+  </footer>
+
+  <!-- bower:js -->
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular-route/angular-route.js"></script>
+  <script src="lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="lib/angular-ui-select/dist/select.js"></script>
+  <script src="lib/angular-sanitize/angular-sanitize.js"></script>
+  <!-- endbower -->
+
+  <!-- include: "type": "js", "files": "js/**/*.js, resources/**/*.js, components/**/*.js, modules/**/*.js" -->
+  <script src="js/app.js"></script>
+  <script src="components/version/interpolate-filter.js"></script>
+  <script src="components/version/version-directive.js"></script>
+  <script src="components/version/version.js"></script>
+  <script src="modules/view1/view1.js"></script>
+  <!-- /include -->
+</body>
+</html>
